@@ -1,0 +1,62 @@
+# Rilascio del sito: lo fa partire il trigger `rilascio-sito` (progetto
+# perielio-shared, europe-west8) a ogni push su `main`. Il push su main E' il
+# rilascio.
+#
+# Quattro passi: costruisce l'immagine, la spinge nel registro, la mette sul
+# servizio Cloud Run `site`, controlla che il sito risponda. Nessun database,
+# nessuna migrazione, nessun segreto.
+
+timeout: 1200s
+options:
+  # Il build gira come `ci-deployer`, l'identita' che la produzione accetta di
+  # farsi rilasciare: con un service account dichiarato i log vanno a Cloud
+  # Logging.
+  logging: CLOUD_LOGGING_ONLY
+serviceAccount: projects/perielio-shared/serviceAccounts/ci-deployer@perielio-shared.iam.gserviceaccount.com
+
+substitutions:
+  _REGION: europe-west8
+  _PROJECT_PROD: perielio-prod
+  _IMMAGINE: europe-west8-docker.pkg.dev/perielio-shared/containers/perielio-site
+
+steps:
+  # Taggata col commit, mai `latest`: davanti a un problema si deve poter dire
+  # quale codice sta girando.
+  - id: costruisci
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "${_IMMAGINE}:${COMMIT_SHA}", "."]
+
+  - id: spingi
+    name: gcr.io/cloud-builders/docker
+    args: ["push", "${_IMMAGINE}:${COMMIT_SHA}"]
+
+  - id: metti-in-servizio
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - services
+      - update
+      - site
+      - --image=${_IMMAGINE}:${COMMIT_SHA}
+      - --region=${_REGION}
+      - --project=${_PROJECT_PROD}
+
+  # Un rilascio e' finito quando il sito risponde, non quando il comando torna
+  # zero. Si interroga l'indirizzo del servizio, non il dominio: il controllo
+  # non dipende da Cloudflare.
+  - id: controlla
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        URL=$$(gcloud run services describe site --region=${_REGION} --project=${_PROJECT_PROD} --format='value(status.url)')
+        for i in 1 2 3 4 5; do
+          CODICE=$$(curl -s -o /dev/null -w '%{http_code}' "$$URL/" || true)
+          if [ "$$CODICE" = "200" ]; then echo "Sito in servizio: $$URL"; exit 0; fi
+          echo "Tentativo $$i: risposta $$CODICE"; sleep 10
+        done
+        echo "ERRORE: il sito non risponde dopo il rilascio."
+        exit 1

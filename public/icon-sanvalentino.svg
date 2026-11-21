@@ -1,0 +1,14 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="112" fill="#1e1e47"/>
+  <g transform="translate(0,0) scale(1)">
+    <g transform="translate(36,56.8) scale(12.64)"><path d="M9.5 5.5 V26.5" stroke="#e9eaf6" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="17.4" cy="11.8" rx="8" ry="6.4" transform="rotate(-16 17.4 11.8)" stroke="#e9eaf6" stroke-width="2"/>
+        <path d="M13.2 17.1 L27.6 6.1" stroke="#e9eaf6" stroke-width="0.9" stroke-linecap="round"/>
+        <path d="M29.2 4.9 L26.3 5.6 L27.9 7.7 Z" fill="#e9eaf6"/>
+        <g fill="#f07a98">
+          <path d="M13.2 17.1 L11.3 16.9 L12.4 15.4 L14.1 15.8 Z"/>
+          <path d="M13.2 17.1 L13.4 19.0 L14.9 17.9 L14.6 16.2 Z"/>
+        </g><path d="M0 0.9 C-0.15 0.75 -1 0.2 -1 -0.35 C-1 -0.75 -0.7 -1 -0.4 -1 C-0.2 -1 -0.05 -0.9 0 -0.75 C0.05 -0.9 0.2 -1 0.4 -1 C0.7 -1 1 -0.75 1 -0.35 C1 0.2 0.15 0.75 0 0.9 Z" transform="translate(22 10.5) scale(2.7)" fill="#e0344f"/>
+        <path d="M0 0.9 C-0.15 0.75 -1 0.2 -1 -0.35 C-1 -0.75 -0.7 -1 -0.4 -1 C-0.2 -1 -0.05 -0.9 0 -0.75 C0.05 -0.9 0.2 -1 0.4 -1 C0.7 -1 1 -0.75 1 -0.35 C1 0.2 0.15 0.75 0 0.9 Z" transform="translate(25.6 8.6) scale(1.15) rotate(18)" fill="#f48aa6"/></g>
+  </g>
+</svg>

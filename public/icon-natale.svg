@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="112" fill="#1e1e47"/>
+  <mask id="stacco" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+    <rect width="512" height="512" fill="#fff"/>
+    <rect x="100" y="141" width="204" height="50" rx="25" transform="rotate(-8 202 166)" fill="#000" stroke="#000" stroke-width="14"/>
+    <circle cx="358" cy="114" r="27" fill="#000" stroke="#000" stroke-width="14"/>
+  </mask>
+  <g transform="translate(0,0) scale(1)">
+    <g mask="url(#stacco)">
+      <g transform="translate(62,131) scale(11.4)">
+        <path d="M9.5 5.5 V26.5" stroke="#e9eaf6" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="17.4" cy="11.8" rx="8" ry="6.4" transform="rotate(-16 17.4 11.8)" stroke="#e9eaf6" stroke-width="2"/>
+        <circle cx="22" cy="10.5" r="2.2" fill="#efbc4b"/>
+        <circle cx="25.1" cy="9.6" r="1.05" fill="#7fb0e8"/>
+      </g>
+      <path d="M118 160 C128 92 170 40 236 34 C288 30 336 56 354 104 C326 82 294 90 288 140 Z" fill="#d8362f"/>
+      <path d="M236 34 C288 30 336 56 354 104 C326 82 294 90 288 140 L256 145 C262 96 262 62 236 34 Z" fill="#b3261f"/>
+    </g>
+    <rect x="100" y="141" width="204" height="50" rx="25" transform="rotate(-8 202 166)" fill="#fbfbff"/>
+    <circle cx="358" cy="114" r="27" fill="#fbfbff"/>
+  </g>
+</svg>
