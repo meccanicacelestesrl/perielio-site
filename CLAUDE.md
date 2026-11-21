@@ -11,7 +11,7 @@ Il sito pubblico `perielio.com` (e `www.perielio.com`): una pagina sola, la `/`,
 
 ## Regole
 
-- **Mai em-dash** (`—`, U+2014), da nessuna parte: si usa `-` con gli spazi, la virgola o i due punti.
+- **Mai em-dash** (il trattino lungo, U+2014), da nessuna parte: si usa `-` con gli spazi, la virgola o i due punti.
 - **Mai nominare prodotti o marchi di terzi** nei testi del sito, nei commit, nelle PR. Nessun testo dice da dove viene un'idea.
 - **Tono**: B2B professionale, al visitatore si dà del tu, conciso. Niente esclamazioni né emoji. Nel testo italiano l'accento vero (`è`, `più`, `perché`), mai l'apostrofo al suo posto (lo controlla `src/__tests__/copy.test.ts`).
 - **Testi in due lingue**: ogni testo visibile sta in `src/app/_site/copy.ts`, in italiano E in inglese nella stessa modifica. Mai testo scritto direttamente nel componente.
