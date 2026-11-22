@@ -19,7 +19,6 @@ export function LandingPage({ lang }: { lang: Lang }) {
   // su un altro host. Un link relativo passerebbe da un redirect, e il
   // prefetch di Next lo vedrebbe bloccato da `connect-src 'self'`.
   const loginHref = appHref("/login");
-  const releaseNotesHref = appHref("/release-notes");
   const langCls = (active: boolean) =>
     active
       ? "font-semibold text-brand-foreground"
@@ -214,12 +213,6 @@ export function LandingPage({ lang }: { lang: Lang }) {
               {t("heroCtaPrimary")}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <Link
-              href={releaseNotesHref}
-              className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-brand-foreground/25 px-5 py-2.5 text-sm font-medium text-brand-foreground/85 transition hover:bg-brand-foreground/10"
-            >
-              {t("ctaSecondary")}
-            </Link>
           </div>
         </div>
       </section>
@@ -228,9 +221,6 @@ export function LandingPage({ lang }: { lang: Lang }) {
       <footer className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-6 py-8 text-sm text-muted-foreground">
         <span>{t("brandFooter")}</span>
         <span className="flex gap-4">
-          <Link href={releaseNotesHref} className="cursor-pointer transition hover:text-foreground">
-            {t("footerChangelog")}
-          </Link>
           <Link href={loginHref} className="cursor-pointer transition hover:text-foreground">
             {t("heroCtaPrimary")}
           </Link>

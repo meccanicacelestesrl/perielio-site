@@ -35,7 +35,7 @@ Perielio è un prodotto di **Meccanica Celeste S.r.l.**, che lo sviluppa e lo ge
 ### Dove vive
 
 - **L'applicazione** è su `app.perielio.com`. Lì stanno l'accesso degli operatori, l'area riservata dei clienti, i moduli di contatto, la pagina pubblica delle novità e tutto il resto del prodotto.
-- **Il sito** è su `perielio.com` (e `www.perielio.com`): una pagina sola, in italiano e in inglese. Ogni altro indirizzo del sito porta all'applicazione. I bottoni «Accedi» e «Le novità» portano all'applicazione.
+- **Il sito** è su `perielio.com` (e `www.perielio.com`): una pagina sola, in italiano e in inglese. Ogni altro indirizzo del sito porta all'applicazione. Il bottone «Accedi» porta all'applicazione.
 - Perielio è solo in cloud: nessuna installazione presso il cliente. La console e l'area riservata si possono comunque **installare come applicazione** sul computer o sul telefono, e si aprono in una finestra propria **[non sul sito]**.
 
 ---
@@ -159,7 +159,7 @@ Il sito oggi racconta la vendita a partire dal preventivo. Il CRM che c'è prima
 - **Nome a schermo**: «Preventivi e contratti».
 - Una sola trattativa scorre dal preventivo (proposto, rivisto, accettato) al contratto firmato. Il preventivo nasce dal listino del prodotto con modelli e dati del cliente già inseriti; a ogni invio il PDF si congela e non cambia più.
 - Il cliente rivede, chiede modifiche, accetta e firma dalla sua area riservata.
-- **Firma**: il sito dice «firma elettronica a valore legale eIDAS (semplice sul preventivo, avanzata sul contratto)», con la possibilità di caricare a mano il documento già firmato. La firma semplice sul preventivo c'è. **[da verificare]**: che la firma avanzata sul contratto sia attiva per tutte le aziende e non dipenda da una configurazione; prima di rafforzare questa frase, chiedere conferma.
+- **Firma**: il cliente firma il contratto con la **firma elettronica semplice** nell'area riservata, quando il modello del contratto è a quel livello; altrimenti l'operatore carica il documento già firmato. La firma avanzata (FEA) sul contratto **non esiste**: manca un fornitore di firma, previsto dalla specifica come passo futuro. Il sito dice «firma elettronica semplice del cliente nell'area riservata, oppure caricamento del documento già firmato» (decisione del PO del 2026-11-22). Mai scrivere «avanzata», «qualificata» o «a valore legale eIDAS» finché il fornitore non c'è.
 - Il contratto attivo crea o aggiorna l'abbonamento: canone, ore incluse, durata, rinnovo tacito o con disdetta, adeguamento ISTAT del canone.
 - **«Firme»** [non sul sito]: si carica un PDF qualsiasi, si posano firme e campi da compilare, si manda il link al cliente, che firma con un codice ricevuto via email o SMS; il documento firmato porta le prove della firma.
 
@@ -201,7 +201,7 @@ Il sito oggi dice «il riepilogo per cliente è pronto da fatturare». Il prodot
 - **«Scadenzario»**: che cosa incassare e che cosa pagare, con lo scaduto in evidenza e i solleciti.
 - **«Prima nota»**: cassa e banca per conto, con il saldo progressivo.
 - **«Riepilogo fatturazione»**: le righe dei documenti emessi con i totali del periodo; c'è anche un piano dei conti.
-- **[da verificare]**: il sito dice «l'emissione della fattura resta una scelta umana». Con la fatturazione ricorrente un'azienda può scegliere, contratto per contratto, che la fattura del canone si emetta da sola, oppure che nasca in bozza per l'operatore. Prima di riusare quella frase, chiedere a Stefano Matteuzzi come va detta.
+- **Fattura del canone**: con una causale di fatturazione impostata sul contratto, il lavoro notturno crea da sola la fattura del canone a fine periodo, ore extra comprese; di norma la emette col numero fiscale, oppure la lascia in bozza se sul contratto è spenta l'emissione automatica. L'invio al sistema di interscambio resta sempre all'operatore. Il sito lo dice così dal 2026-11-22 (decisione del PO): la frase vecchia «l'emissione della fattura resta una scelta umana» non era esatta e non va riusata.
 
 ### 4.15 Personale: spese, assenze, buste paga [non sul sito]
 
@@ -315,8 +315,8 @@ Un prodotto solo, non cento da mettere insieme: tutto il rapporto con il cliente
 5. **Per chi è**: «Per ogni azienda che ha clienti.»
 6. **Quattro garanzie**: Dati ospitati in Europa; Dati isolati per azienda; Dati personali protetti; Firma a valore legale.
 7. **Lo scopo**: «Un prodotto solo, non cento da mettere insieme.»
-8. **Chiusura**: di nuovo il claim, «Accedi» e «Le novità».
-9. **Piede**: «Perielio - Meccanica Celeste», Novità, Accedi.
+8. **Chiusura**: di nuovo il claim e «Accedi».
+9. **Piede**: «Perielio - Meccanica Celeste», Accedi.
 
 ### Il tono
 
@@ -338,7 +338,7 @@ Funzioni vere del prodotto che oggi la pagina non nomina, e che sono il material
 - **Nessun numero non confermato**: quanti clienti, quante richieste risolte da Peri, quante ore risparmiate, percentuali, tempi di risposta, livelli di servizio garantiti.
 - **Nessun cliente, nessun logo, nessuna testimonianza, nessun caso di studio** senza la conferma di Stefano Matteuzzi (e il permesso scritto del cliente).
 - **Nessun prezzo**, nessun piano, nessuna prova gratuita, nessuno sconto, finché Stefano Matteuzzi non li conferma.
-- **Mai nomi di prodotti o marchi di terzi**: né i fornitori di AI, di posta, di agenda, di pagamento, di firma, di fatturazione, né i concorrenti, né le piattaforme di sviluppo del codice. Si descrive in modo generico («la piattaforma di sviluppo», «la casella email collegata», «il sistema di interscambio»). Nessun testo dice da dove viene un'idea. Nota: il testo attuale della funzione «Per chi fa software» nomina per nome una piattaforma di sviluppo del codice; se resta così è una deroga, da confermare con Stefano Matteuzzi.
+- **Mai nomi di prodotti o marchi di terzi**: né i fornitori di AI, di posta, di agenda, di pagamento, di firma, di fatturazione, né i concorrenti, né le piattaforme di sviluppo del codice. Si descrive in modo generico («la piattaforma di sviluppo», «la casella email collegata», «il sistema di interscambio»). Nessun testo dice da dove viene un'idea. Dal 2026-11-22 anche la funzione «Per chi fa software» dice «la piattaforma di sviluppo» (decisione del PO): nessuna deroga.
 - **Mai nominare altri prodotti dell'azienda** che fa Perielio.
 - **Nessun dettaglio tecnico di sicurezza o infrastruttura**: dove stanno i server, quali servizi si usano, come sono fatti i controlli. Basta ciò che le quattro garanzie dicono già.
 - **Nessuna promessa legale o fiscale oltre i fatti**: «firma a valore legale» sì; certificazioni, conformità a norme specifiche o garanzie che il prodotto non dichiara, no.
@@ -351,7 +351,7 @@ Funzioni vere del prodotto che oggi la pagina non nomina, e che sono il material
 
 ## 9. Dove si trovano i dettagli pubblici
 
-- **Le novità del prodotto**: la pagina pubblica `app.perielio.com/release-notes` (dal sito: «Le novità», «Novità» nel piede). Al 22 novembre 2026 la pagina non mostra ancora nessuna voce: ogni nota nasce nascosta e chi amministra il prodotto decide quali rendere pubbliche. Finché è vuota, un testo del sito non rimanda a una novità specifica. **[da verificare]** se un link a una pagina vuota debba restare.
+- **Le novità del prodotto**: la pagina pubblica `app.perielio.com/release-notes`. Al 22 novembre 2026 non mostra ancora nessuna voce (ogni nota nasce nascosta e chi amministra il prodotto decide quali rendere pubbliche), quindi il sito **non la collega** (decisione del PO del 2026-11-22). I collegamenti «Le novità» nella chiusura e «Novità» nel piede tornano quando c'è la prima nota pubblica.
 - **La documentazione delle API**: esiste dentro l'applicazione per chi integra Perielio; **[da verificare]** se e dove sia pubblica prima di citarla.
 - **Le guide d'uso** stanno dentro la console (tutorial di pagina, base di conoscenza), non sul sito.
 - **Il sito stesso**: `src/app/_site/copy.ts` per tutti i testi, `CLAUDE.md` per le regole del sito.
