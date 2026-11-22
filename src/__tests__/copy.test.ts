@@ -30,3 +30,30 @@ describe("testi del sito", () => {
     }
   });
 });
+
+// Decisioni del PO del 2026-11-22: il sito dice solo cio' che il prodotto fa.
+describe("affermazioni del sito", () => {
+  const tutto = (lang: "it" | "en") => Object.values(COPY[lang]).join("\n");
+
+  it("nessuna firma avanzata o eIDAS, che il prodotto non ha", () => {
+    for (const lang of ["it", "en"] as const) {
+      expect(tutto(lang)).not.toMatch(/eIDAS|avanzata|advanced|qualificata|qualified|valore legale|legally valid/i);
+    }
+  });
+
+  it("la fattura non e' descritta come sempre manuale", () => {
+    expect(tutto("it")).not.toMatch(/scelta umana/i);
+    expect(tutto("en")).not.toMatch(/human choice/i);
+  });
+
+  it("nessun marchio della piattaforma di sviluppo", () => {
+    for (const lang of ["it", "en"] as const) {
+      expect(tutto(lang)).not.toMatch(/github|gitlab|bitbucket/i);
+    }
+  });
+
+  it("nessun collegamento alle novita' finche' la pagina e' vuota", () => {
+    expect(Object.keys(COPY.it)).not.toContain("ctaSecondary");
+    expect(Object.keys(COPY.it)).not.toContain("footerChangelog");
+  });
+});
