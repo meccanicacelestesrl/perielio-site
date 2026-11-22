@@ -2,6 +2,8 @@
 
 Il sito pubblico `perielio.com` (e `www.perielio.com`): una pagina sola, la `/`, in italiano e in inglese. L'applicazione (il gestionale) vive in un altro repository e su un altro host, `app.perielio.com`: il sito ci manda il login, le note di rilascio e ogni altro percorso (`src/proxy.ts`, `src/lib/app-origin.ts`).
 
+**Contesto del prodotto**: [`docs/contesto-prodotto.md`](docs/contesto-prodotto.md) descrive Perielio nel dettaglio. Leggilo prima di scrivere o cambiare un testo del sito.
+
 ## Rilascio
 
 - **Il push su `main` rilascia**: il trigger Cloud Build `rilascio-sito` (progetto `perielio-shared`, `europe-west8`) esegue `cloudbuild.yaml`, mette l'immagine sul servizio Cloud Run `site` (progetto `perielio-prod`) e controlla che la pagina risponda. Non serve accesso a Google Cloud per rilasciare.
