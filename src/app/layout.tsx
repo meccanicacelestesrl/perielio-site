@@ -37,6 +37,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Perielio",
     applicationName: "Perielio",
     description: COPY[lang].metaDescription,
+    // L'indirizzo principale e' `www`: l'apice ci arriva in 301 dal Worker
+    // di Cloudflare (repository Perielio, infra/cloudflare/worker).
+    alternates: { canonical: "https://www.perielio.com/" },
     icons: iconeDellaScheda(),
   };
 }
